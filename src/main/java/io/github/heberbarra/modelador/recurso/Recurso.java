@@ -37,4 +37,12 @@ public interface Recurso {
     default Path pegarCaminhoRecurso(String caminhoRecurso) {
         return pegarArquivoRecurso(caminhoRecurso).toPath();
     }
+
+    /**
+     * Pega o valor de uma variável de ambiente.
+     * @param nomeVariavel o nome da variável de ambiente, cujo valor se deseja obter
+     * @return o valor da variável como uma {@link String}
+     * */
+    String pegarValorVariavelAmbiente(String nomeVariavel);
+
 }

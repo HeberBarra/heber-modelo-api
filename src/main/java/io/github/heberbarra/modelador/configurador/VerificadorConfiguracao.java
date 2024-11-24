@@ -18,6 +18,7 @@ public interface VerificadorConfiguracao {
 
     /**
      * Registra um novo leitor de arquivo de verificação de configuração.
+     * @param leitorArquivoConfiguracao o leitor a registrado
      * */
     void registrarLeitor(LeitorArquivoVerificacao leitorArquivoConfiguracao);
 

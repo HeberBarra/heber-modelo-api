@@ -51,6 +51,7 @@ public interface Configurador {
      * @param categoria a tabela/categoria na qual se encontra o atributo desejado
      * @param atributo o nome do atributo desejado
      * @param tipoAtributo o tipo do atributo, devendo ser de um dos seguintes tipos: {@code String}, {@code long}, {@code double} ou {@code boolean}
+     * @param <T> o tipo do atributo
      * @return o valor do atributo requirido ou {@code null} caso o valor não tenha sido encontrado.
      * */
     <T> T pegarValorConfiguracao(String categoria, String atributo, Class<T> tipoAtributo);
