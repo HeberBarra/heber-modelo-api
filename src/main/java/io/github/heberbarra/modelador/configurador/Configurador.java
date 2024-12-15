@@ -1,6 +1,5 @@
 package io.github.heberbarra.modelador.configurador;
 
-import io.github.heberbarra.modelador.codigosaida.CodigoSaida;
 import java.util.Map;
 
 /**
@@ -15,11 +14,13 @@ public interface Configurador {
      * */
     void criarArquivos();
 
+    /**
+     * Lê os arquivos de configuração padrão do programa
+     * */
     void lerConfiguracaoPadrao();
 
     /**
-     * Verifica se há algum erro na configuração do programa, caso haja um erro o grave o programa é encerrado com
-     * o código de saída: {@link CodigoSaida#ERRO_CONFIGURACOES}.
+     * Lê os arquivos de configuração do programa
      * */
     void lerConfiguracao();
 
