@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.heberbarra"
-version = "0.0.7-SNAP"
+version = "0.0.8-SNAP"
 
 repositories {
     mavenCentral()
@@ -61,9 +61,9 @@ mavenPublishing {
             }
 
             developer {
-                id = "JoaoGabeee"
-                name = "João Gabriel de Cristo"
-                url = "https://github.com/JoaoGabeee"
+                id = "Blashss"
+                name = "Matheus de Assis de Paula"
+                url = "https://github.com/Blashss"
             }
 
             developer {
