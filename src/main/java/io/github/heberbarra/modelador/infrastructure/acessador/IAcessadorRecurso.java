@@ -62,5 +62,4 @@ public interface IAcessadorRecurso {
      * the value of the environment variable ou an empty {@link String} if the variable wasn't found.
      * */
     String pegarValorVariavelAmbiente(String nomeVariavel);
-
 }

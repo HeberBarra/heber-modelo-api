@@ -39,5 +39,4 @@ public interface IConversorTOMLString {
      * @return os dados formatados como TOML / the data formatted as TOML.
      * */
     String converterMapPaletaParaStringTOML(Map<String, List<Map<String, String>>> dados);
-
 }

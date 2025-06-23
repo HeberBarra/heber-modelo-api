@@ -39,5 +39,4 @@ public interface IPastaConfiguracao {
      * @return o caminho da pasta / the path to the configuration folder.
      * */
     String decidirPastaConfiguracao();
-
 }

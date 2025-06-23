@@ -11,9 +11,9 @@
  */
 package io.github.heberbarra.modelador.domain.configuracao;
 
-import org.tomlj.TomlTable;
 import java.util.List;
 import java.util.Map;
+import org.tomlj.TomlTable;
 
 /**
  * Verifica a configuração do usuário e reporta os erros encontrados.

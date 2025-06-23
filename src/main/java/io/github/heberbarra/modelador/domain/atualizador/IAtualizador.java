@@ -61,5 +61,4 @@ public interface IAtualizador {
      * Checks to see if there is an update available.
      * */
     boolean verificarAtualizacaoDisponivel();
-
 }

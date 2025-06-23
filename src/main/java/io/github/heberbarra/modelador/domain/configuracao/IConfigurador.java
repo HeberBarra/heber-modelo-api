@@ -85,5 +85,4 @@ public interface IConfigurador {
      * @param tipoAtributo a classe/tipo do atributo / the atribute's class/type.
      * */
     <T> T pegarValorConfiguracao(String categoria, String atributo, Class<T> tipoAtributo);
-
 }

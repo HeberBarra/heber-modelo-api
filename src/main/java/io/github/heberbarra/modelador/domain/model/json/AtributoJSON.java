@@ -22,7 +22,7 @@ import java.util.Map;
 public abstract class AtributoJSON {
 
     protected int indentacao;
-    protected  int nivelIndentacao;
+    protected int nivelIndentacao;
 
     public AtributoJSON() {
         this.indentacao = 2;
@@ -36,5 +36,4 @@ public abstract class AtributoJSON {
      * @return um {@link Map} contendo as informações / a {@link Map} containing the information.
      * */
     public abstract Map<String, String> converterParaMap();
-
 }
