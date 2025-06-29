@@ -1,0 +1,51 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-22.04
+    if: startsWith(github.ref, 'refs/tags')
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Setup Java
+        uses: actions/setup-java@v4.7.1
+        with:
+          java-version: '24'
+          distribution: 'corretto'
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - name: Create JAR File
+        run: ./gradlew jar
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./build/libs/heber-modelo-api.jar
+          name: heber-modelo-api.jar
+
+  create-release:
+    permissions:
+      contents: write
+
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/download-artifact@v4.3.0
+        with:
+          name: heber-modelo-api.jar
+      - name: Calculate Checksum
+        run: sha256sum heber-modelo-api.jar > SHA256SUM
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            SHA256SUM
+            heber-modelo-api.jar
+          make_latest: true
