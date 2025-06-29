@@ -1,11 +1,11 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-    id("java")
-    id("maven-publish")
-    id("signing")
-    id("com.diffplug.spotless") version "6.25.0"
-    id("com.vanniktech.maven.publish") version "0.30.0"
+    java
+    `maven-publish`
+    signing
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.publish)
 }
 
 group = "io.github.heberbarra"
@@ -84,7 +84,11 @@ mavenPublishing {
 }
 
 dependencies {
-    implementation("org.tomlj:tomlj:1.1.1")
+    implementation(libs.tomlj)
+}
+
+tasks.jar {
+    this.archiveFileName.set("${archiveBaseName.get()}.${archiveExtension.get()}")
 }
 
 tasks.javadoc {
