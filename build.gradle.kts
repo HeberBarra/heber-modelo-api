@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.heberbarra"
-version = "0.0.9-SNAP"
+version = "0.0.10-SNAP"
 
 repositories {
     mavenCentral()
