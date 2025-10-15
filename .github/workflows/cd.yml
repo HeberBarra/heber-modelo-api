@@ -1,0 +1,29 @@
+name: cd
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*.*.*"
+
+jobs:
+  publish-to-maven-central:
+    env:
+      ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+      ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+      ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY_MEMORY }}
+      ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGNING_KEY_ID }}
+      ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-22.04
+    if: startsWith(github.ref, 'refs/tags')
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: actions/setup-java@v5.0.0
+        with:
+          java-version: '24'
+          distribution: 'corretto'
+      - uses: gradle/actions/setup-gradle@v5
+      - name: Publish to Maven Central
+        run: ./gradlew publishToMavenCentral --warn --stacktrace
