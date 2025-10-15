@@ -35,6 +35,13 @@ public interface IVerificadorConfiguracao {
     boolean configuracoesContemErrosGraves();
 
     /**
+     * Lê os arquivos de template de configuração do programa.
+     * <br>
+     * Reads the program's configuration templates files.
+     * */
+    void lerArquivosTemplate();
+
+    /**
      * Mostra as informações de cada um dos leitores registrados.
      * <br>
      * Shows the information of each registered reader.

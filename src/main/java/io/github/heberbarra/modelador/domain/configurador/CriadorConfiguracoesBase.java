@@ -21,7 +21,7 @@ import io.github.heberbarra.modelador.domain.verificador.VerificadorAbstratoJSON
  * Helper class responsible for creating the program's configuration directory and related files.
  * @since v0.0.1-SNAPSHOT
  * */
-public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSONAtributo<?>> {
+public abstract class CriadorConfiguracoesBase {
 
     protected IPastaConfiguracao pastaConfiguracao;
 
@@ -35,7 +35,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * Creates the program's configuration directory.
      * @see IPastaConfiguracao
      * */
-    abstract void criarPastaConfiguracao();
+    public abstract void criarPastaConfiguracao();
 
     /**
      * Cria o arquivo de configuração na pasta de configuração do programa.
@@ -45,14 +45,14 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @see IPastaConfiguracao
      * @see CriadorConfiguracoesBase#criarPastaConfiguracao()
      * */
-    abstract void criarArquivoConfiguracoes(String arquivoConfiguracoes);
+    public abstract void criarArquivoConfiguracoes(String arquivoConfiguracoes);
 
     /**
      * Cria um arquivo .env na pasta de configuração do programa, com variáveis de ambiente importantes para o sistema.
      * <br>
      * Creates a .env file in the program's default configuration directory with important environment variables.
      * */
-    abstract void criarArquivoDotEnv();
+    public abstract void criarArquivoDotEnv();
 
     /**
      * Cria o arquivo de paleta na pasta de configuração do programa.
@@ -62,7 +62,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @see IPastaConfiguracao
      * @see CriadorConfiguracoesBase#criarPastaConfiguracao()
      * */
-    abstract void criarArquivoPaleta(String arquivoPaleta);
+    public abstract void criarArquivoPaleta(String arquivoPaleta);
 
     /**
      * Sobrescreve o arquivo de configuração do programa com os dados fornecidos.
@@ -73,7 +73,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @param dadosToml os dados a serem escritos no arquivo / the data that should be written into the file.
      * @see CriadorConfiguracoesBase#sobrescreverArquivoPaleta(String, String)
      * */
-    abstract void sobrescreverArquivoConfiguracoes(String arquivoConfiguracoes, String dadosToml);
+    public abstract void sobrescreverArquivoConfiguracoes(String arquivoConfiguracoes, String dadosToml);
 
     /**
      * Sobrescreve o arquivo de paleta do programa com os dados fornecidos.
@@ -84,7 +84,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @param dadosToml os dados a serem escritos no arquivo / the data that should be written into the file.
      * @see CriadorConfiguracoesBase#sobrescreverArquivoConfiguracoes(String, String)
      * */
-    abstract void sobrescreverArquivoPaleta(String arquivoPaleta, String dadosToml);
+    public abstract void sobrescreverArquivoPaleta(String arquivoPaleta, String dadosToml);
 
     /**
      * Lê a configuração padrão do programa.
@@ -93,7 +93,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @see CriadorConfiguracoesBase#pegarDotEnvPadrao(VerificadorAbstratoJSONAtributo)
      * @see CriadorConfiguracoesBase#pegarPaletaPadrao(VerificadorAbstratoJSONAtributo)
      * */
-    abstract void pegarConfiguracaoPadrao(T verificador);
+    public abstract void pegarConfiguracaoPadrao(VerificadorAbstratoJSONAtributo<?> verificador);
 
     /**
      * Lê o .env padrão do sistema.
@@ -102,7 +102,7 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @see CriadorConfiguracoesBase#pegarConfiguracaoPadrao(VerificadorAbstratoJSONAtributo)
      * @see CriadorConfiguracoesBase#pegarPaletaPadrao(VerificadorAbstratoJSONAtributo)
      * */
-    abstract void pegarDotEnvPadrao(T verificador);
+    public abstract void pegarDotEnvPadrao(VerificadorAbstratoJSONAtributo<?> verificador);
 
     /**
      * Lê a paleta padrão do programa.
@@ -111,5 +111,5 @@ public abstract class CriadorConfiguracoesBase<T extends VerificadorAbstratoJSON
      * @see CriadorConfiguracoesBase#pegarConfiguracaoPadrao(VerificadorAbstratoJSONAtributo)
      * @see CriadorConfiguracoesBase#pegarDotEnvPadrao(VerificadorAbstratoJSONAtributo)
      * */
-    abstract void pegarPaletaPadrao(T verificador);
+    public abstract void pegarPaletaPadrao(VerificadorAbstratoJSONAtributo<?> verificador);
 }

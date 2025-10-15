@@ -99,7 +99,7 @@ public interface IConfigurador {
      * */
     <T> Optional<T> pegarValorConfiguracao(String categoria, String atributo, Class<T> tipoAtributo);
 
-    CriadorConfiguracoesBase<?> getCriadorConfiguracoes();
+    CriadorConfiguracoesBase getCriadorConfiguracoes();
 
     ICombinadorConfiguracoes getCombinarConfiguracoes();
 
