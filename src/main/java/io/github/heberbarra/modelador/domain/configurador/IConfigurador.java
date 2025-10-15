@@ -9,9 +9,11 @@
  * A short and simple permissive license with conditions only requiring preservation of copyright and license notices.
  * Licensed works, modifications, and larger works may be distributed under different terms and without source code.
  */
-package io.github.heberbarra.modelador.domain.configuracao;
+package io.github.heberbarra.modelador.domain.configurador;
 
+import io.github.heberbarra.modelador.domain.codigo.CodigoSaida;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Gerencia a configuração do programa, e permite fácil acesso à mesma.
@@ -60,6 +62,15 @@ public interface IConfigurador {
     void mostrarConfiguracao();
 
     /**
+     * Verifica se há algum erro na configuração do programa. Se um erro grave for encontrado o programa é encerrado com o código de saída: {@link CodigoSaida#ERRO_CONFIGURACOES}.
+     * <br>
+     * Searches the program's configuration for errors, if there's any important error the program will be finalized with the following code {@link CodigoSaida#ERRO_CONFIGURACOES}.
+     *
+     * @see IVerificadorConfiguracao
+     * */
+    void verificarConfiguracoes();
+
+    /**
      * Pega o código hexadecimal de uma variável específica da paleta.
      * <br>
      * Gets the hexadecimal code of a specified variable of color palette.
@@ -84,5 +95,15 @@ public interface IConfigurador {
      * @param atributo o nome do atributo / the atribute's name.
      * @param tipoAtributo a classe/tipo do atributo / the atribute's class/type.
      * */
-    <T> T pegarValorConfiguracao(String categoria, String atributo, Class<T> tipoAtributo);
+    <T> Optional<T> pegarValorConfiguracao(String categoria, String atributo, Class<T> tipoAtributo);
+
+    CriadorConfiguracoesBase<?> getCriadorConfiguracoes();
+
+    ICombinadorConfiguracoes getCombinarConfiguracoes();
+
+    ILeitorConfiguracao getLeitorConfiguracao();
+
+    IPastaConfiguracao getPastaConfiguracao();
+
+    IVerificadorConfiguracao getVerificadorConfiguracao();
 }

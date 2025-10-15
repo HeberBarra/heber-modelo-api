@@ -9,7 +9,7 @@
  * A short and simple permissive license with conditions only requiring preservation of copyright and license notices.
  * Licensed works, modifications, and larger works may be distributed under different terms and without source code.
  */
-package io.github.heberbarra.modelador.domain.configuracao;
+package io.github.heberbarra.modelador.domain.configurador;
 
 import io.github.heberbarra.modelador.domain.verificador.VerificadorAbstratoJSONAtributo;
 import java.io.File;
