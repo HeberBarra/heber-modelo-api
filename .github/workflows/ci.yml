@@ -24,7 +24,7 @@ jobs:
       - name: Create JAR File
         run: ./gradlew jar
       - name: Upload JAR
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           path: ./build/libs/heber-modelo-api.jar
           name: heber-modelo-api.jar
