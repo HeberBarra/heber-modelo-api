@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.heberbarra"
-version = "0.0.11-SNAP"
+version = "0.0.12-SNAP"
 
 repositories {
     mavenCentral()
@@ -40,13 +40,13 @@ mavenPublishing {
     pom {
         name = "heber-modelo-api"
         description = "API do Heber-Modelo"
-        url = "https://github.com/HeberBarra/heber-modelo-api"
+        url = "https://github.com/Heber-Modelo/heber-modelo-api"
         packaging = "jar"
 
         licenses {
             license {
                 name = "MIT"
-                url = "https://github.com/HeberBarra/heber-modelo-api/blob/main/LICENSE"
+                url = "https://github.com/Heber-Modelo/heber-modelo-api/blob/main/LICENSE"
             }
         }
 
@@ -71,9 +71,9 @@ mavenPublishing {
         }
 
         scm {
-            url = "https://github.com/HeberBarra/heber-modelo-api"
-            connection = "scm:git://github.com:HeberBarra/heber-modelo-api"
-            developerConnection = "scm:git:git@github.com:HeberBarra/heber-modelo-api.git"
+            url = "https://github.com/Heber-Modelo/heber-modelo-api"
+            connection = "scm:git://github.com:Heber-Modelo/heber-modelo-api"
+            developerConnection = "scm:git:git@github.com:Heber-Modelo/heber-modelo-api.git"
         }
     }
 
