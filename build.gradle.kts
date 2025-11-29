@@ -59,14 +59,21 @@ mavenPublishing {
             }
 
             developer {
+                id = "JoaoGabee"
+                name = "João Gabriel de Cristo"
+                url = "https://github.com/JoaoGabeee"
+            }
+
+            developer {
                 id = "Blashss"
                 name = "Matheus de Assis de Paula"
                 url = "https://github.com/Blashss"
             }
 
             developer {
-                id = "MatheusJam"
+                id = "MatheusJ28"
                 name = "Matheus Jun Alves Matuda"
+                url = "https://github.com/MatheusJ28"
             }
         }
 
