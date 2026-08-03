@@ -24,6 +24,6 @@ jobs:
         with:
           java-version: '24'
           distribution: 'corretto'
-      - uses: gradle/actions/setup-gradle@v6
+      - uses: gradle/actions/setup-gradle@v6.2.0
       - name: Publish to Maven Central
         run: ./gradlew publishToMavenCentral --warn --stacktrace
