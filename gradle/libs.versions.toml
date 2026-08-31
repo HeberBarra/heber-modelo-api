@@ -1,5 +1,5 @@
 [plugins]
-spotless = { id = "com.diffplug.spotless", version = "8.10.0" }
+spotless = { id = "com.diffplug.spotless", version = "8.10.1" }
 publish = { id = "com.vanniktech.maven.publish", version = "0.37.0" }
 [libraries]
 tomlj = { module = "org.tomlj:tomlj", version = "1.1.1" }
